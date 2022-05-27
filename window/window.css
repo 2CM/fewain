@@ -1,0 +1,178 @@
+/* VARS */
+
+:root {
+    --dark: rgb(32,32,32);
+    --lighter: rgb(48,48,48);
+    --light: rgb(96,96,96);
+
+    --direntHeight: 24px;
+    --direntFontSize: 20px;
+    --direntHoverColor: rgba(200, 200, 200, 0.25);
+    --direntSelectColor: rgba(200, 200, 200, 0.5);
+
+    --navHeight: 30px;
+    --navButtonHover: rgba(200,200,200, 0.3);
+    --navButtonActive: rgba(200,200,200, 0.4);
+}
+
+
+/* MAIN */
+
+body {
+    background: var(--dark);
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navHover {
+    cursor: pointer;
+}
+
+.navHover:hover {
+    background: var(--navButtonHover);
+}
+
+.navHover:active {
+    background: var(--navButtonActive);
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--lighter);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--light);
+}
+
+.message {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    user-select: none;
+}
+
+.greyed {
+    color: grey;
+}
+
+/* DIRENTS */
+
+.dirent {
+    width: 100%;
+    height: var(--direntHeight);
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.direntIcon {
+    height: var(--direntHeight);
+    line-height: var(--direntHeight);
+    width: var(--direntFontSize);
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.direntName {
+    line-height: var(--direntHeight);
+    font-size: var(--direntFontSize);
+}
+
+
+.selected {
+    border: 2px solid white;
+    background: var(--direntSelectColor);
+}
+
+.dirent:hover {
+    background: var(--direntHoverColor);
+}
+
+/* NAVBAR */
+
+#nav {
+    width: 100%;
+    height: var(--navHeight);
+    display: flex;
+    flex-wrap: nowrap;
+    border-bottom: 2px solid white;
+}
+
+.navButton {
+    background: none;
+    padding: 3px;
+    width: var(--navHeight);
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+#navSearch, #navDirHolder, #navInput {
+    border: none;
+    outline: none;
+    border-left: 2px solid var(--lighter);
+    height: var(--navHeight);
+    background: var(--dark);
+    color: white;
+}
+
+#navInput {
+    border: none;
+    width: 100%;
+}
+
+#navSearch {
+    padding-left: 2px;
+    width: 150px;
+    padding: 0;
+    padding-left: 3px;
+    align-self: flex-end;
+}
+
+#navDirHolder {
+    flex-grow: 1;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+#navDirs {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    float: right;
+}
+
+
+
+.navDirSegment {
+    display: flex;
+    width: fit-content;
+    white-space: nowrap;
+    user-select: none;
+    height: 100%;
+    line-height: 200%;
+    padding: 0;
+    padding-left: 2px;
+}
+
+.navDirSegment i {
+    padding: 0 2px 0 6px;
+    line-height: 200%;
+}
